@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Search, Menu, User, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,23 +10,23 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">E</span>
               </div>
               <span className="font-bold text-xl bg-gradient-primary bg-clip-text text-transparent">
                 EliteStore
               </span>
-            </div>
+            </Link>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Products</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Categories</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">About</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+            <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+            <Link to="/products" className="text-muted-foreground hover:text-primary transition-colors">Products</Link>
+            <Link to="/categories" className="text-muted-foreground hover:text-primary transition-colors">Categories</Link>
+            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
+            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
           </nav>
 
           {/* Actions */}
