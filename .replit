@@ -34,6 +34,36 @@ waitForPort = 5000
 [workflows.workflow.metadata]
 outputType = "webview"
 
+[[workflows.workflow]]
+name = "Build for Production"
+author = 48106289
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Build completed! Files ready in dist/ directory\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Ready for deployment on Replit Static Deployment\""
+
+[[workflows.workflow]]
+name = "Preview Production Build"
+author = 48106289
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run preview"
+
 [[ports]]
 localPort = 5000
 externalPort = 80
